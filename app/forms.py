@@ -47,5 +47,5 @@ class EmptyForm(FlaskForm):
 
 class PostForm(FlaskForm):
 	'''[Chapter 9] a class for users to create a form'''
-	post = TextAreaField('Say somthing', validators=[DataRequired(), Length(min=1, max=140)])
+	post = TextAreaField('Say somthing:', validators=[DataRequired(), Length(min=1, max=140)])
 	submit = SubmitField('Submit')
