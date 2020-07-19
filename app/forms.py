@@ -49,3 +49,14 @@ class PostForm(FlaskForm):
 	'''[Chapter 9] a class for users to create a form'''
 	post = TextAreaField('Say somthing:', validators=[DataRequired(), Length(min=1, max=140)])
 	submit = SubmitField('Submit')
+
+class ResetPasswordRequestForm(FlaskForm):
+	'''[Chapter 10] send an email address to reset password'''
+	email = StringField('Email', validators=[DataRequired(), Email()])
+	submit = SubmitField('Submit')
+
+class ResetPasswordForm(FlaskForm):
+	'''[Chapter 10] reset password'''
+	password = PasswordField('Password', validators=[DataRequired()])
+	password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
+	submit = SubmitField('Request Password Reset')
