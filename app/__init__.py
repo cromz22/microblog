@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail # [Chapter 10] Email support
+from flask_bootstrap import Bootstrap # [Chapter 11] Facelift
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
@@ -15,6 +16,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 mail = Mail(app)
+bootstrap = Bootstrap(app)
 
 from app import routes, models, errors
 
