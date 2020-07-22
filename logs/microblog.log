@@ -72,3 +72,53 @@ smtplib.SMTPServerDisconnected: please run connect() first
 2020-07-20 23:30:47,609 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:47]
 2020-07-20 23:31:45,523 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:47]
 2020-07-20 23:35:13,497 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:47]
+2020-07-21 23:03:50,087 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:47]
+2020-07-22 19:50:17,542 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:49]
+2020-07-22 20:12:20,730 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:49]
+2020-07-22 20:12:40,640 ERROR: Exception on /user/shimizu [GET] [in /home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/cromz/learning/microblog/app/routes.py", line 83, in user
+    return render_template('user.html', user=user, posts=posts.items, next_url=next_url, prev_url=prev_url, form=form)
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/cromz/learning/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/cromz/learning/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/cromz/learning/microblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/cromz/learning/microblog/app/templates/base.html", line 49, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/cromz/learning/microblog/app/templates/user.html", line 15, in block "app_content"
+    <p>Last seen on: {{ moment(user.last_seen).fomat('LLL') }}</p>
+jinja2.exceptions.UndefinedError: 'flask_moment._moment object' has no attribute 'fomat'
+2020-07-22 20:13:09,280 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:49]
+2020-07-22 20:14:48,447 INFO: Microblog startup [in /home/cromz/learning/microblog/app/__init__.py:49]
